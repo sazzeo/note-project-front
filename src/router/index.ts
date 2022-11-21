@@ -1,13 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
+import campaign from "@/router/modules/campaign";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: "/",
-      name: "home",
-      component: () => import("@/components/layout/Test.vue"),
-    },
-  ],
+  routes: [...campaign],
 });
 
 export default router;
