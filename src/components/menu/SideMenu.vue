@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row >
     <el-col :span="24">
       <el-menu
         background-color="#ECECED"
@@ -40,18 +40,10 @@ import { Menu } from "@/types/common/menu";
 const menus = ref<Array<Menu>>([
   {
     menuSeq: "1",
-    menuName: "캠페인",
+    menuName: "Notes",
     menuPath: "",
     childrenMenu: [
-      { menuSeq: "3", menuName: "발송요청", menuPath: "/campaign/send" },
-    ],
-  },
-  {
-    menuSeq: "2",
-    menuName: "설정",
-    menuPath: "",
-    childrenMenu: [
-      { menuSeq: "4", menuName: "메뉴설정", menuPath: "/setting/menu" },
+      { menuSeq: "3", menuName: "my note", menuPath: "/boards" },
     ],
   },
 ]);

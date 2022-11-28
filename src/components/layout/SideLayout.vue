@@ -1,5 +1,5 @@
 <template>
-  <div class="side-layout">
+  <div class="side-layout ">
     <side-menu></side-menu>
   </div>
 </template>
@@ -8,5 +8,6 @@
 
 <style scoped>
 .side-layout {
+  width: 230px;
 }
 </style>
