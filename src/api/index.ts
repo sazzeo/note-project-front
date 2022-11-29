@@ -1,10 +1,5 @@
-import axios, {
-  AxiosPromise,
-  AxiosRequestConfig,
-  AxiosRequestHeaders,
-} from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import { Options } from "@/types/common/api";
-import qs from "qs";
 
 const API_URL_PREFIX = "/api/dmcrm";
 /**
@@ -21,8 +16,7 @@ export const request = async (
   const method = options?.method?.toLowerCase() || "get";
 
   const config: AxiosRequestConfig = {
-    // url: `${path}`,
-    url: `${API_URL_PREFIX}${path}`,
+    url: `${path}`,
     method,
     withCredentials: true,
     timeout: 30 * 1000,
@@ -50,6 +44,7 @@ export const request = async (
 
   try {
     const response = await axios(config);
+    console.log(response);
     return Promise.resolve(response);
   } catch (error: any) {
     return Promise.reject(error.response.data);

@@ -3,7 +3,7 @@
     <el-header class="web-header" style="height: 70px; padding: 0px">
       <header-layout />
     </el-header>
-    <el-container >
+    <el-container>
       <el-aside width="230px">
         <el-scrollbar height="calc(100vh - 70px)">
           <side-layout></side-layout>

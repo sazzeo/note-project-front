@@ -1,5 +1,5 @@
 <template>
-  <el-row >
+  <el-row>
     <el-col :span="24">
       <el-menu
         background-color="#ECECED"
@@ -42,9 +42,7 @@ const menus = ref<Array<Menu>>([
     menuSeq: "1",
     menuName: "Notes",
     menuPath: "",
-    childrenMenu: [
-      { menuSeq: "3", menuName: "my note", menuPath: "/boards" },
-    ],
+    childrenMenu: [{ menuSeq: "3", menuName: "my note", menuPath: "/notes" }],
   },
 ]);
 

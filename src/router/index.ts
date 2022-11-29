@@ -1,10 +1,10 @@
-import {createRouter, createWebHistory} from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import member from "@/router/modules/member";
-import board from "@/router/modules/board";
+import board from "@/router/modules/note";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [ ...member , ...board],
+  routes: [...member, ...board],
 });
 
 export default router;
