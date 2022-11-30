@@ -40,7 +40,7 @@ export default defineConfig({
             "$notify",
           ],
           "@/router": [["default", "$router"]],
-          "@/store": [["default", "$store"]],
+          "@/hooks/store": ["$store"],
           "@/hooks/dayjs": ["$dayjs"],
           "@/hooks/store-service": ["$dialog", "$toast"],
           "@/types/common/search": [

@@ -30,11 +30,7 @@
 import { Member } from "@/types/member";
 import { authApi } from "@/api/modules/auth";
 
-const form = ref<Member>({
-  nickname: "",
-  id: "",
-  password: "",
-});
+const form = ref<Member>(new Member());
 
 const onSubmit = async () => {
   try {

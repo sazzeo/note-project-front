@@ -42,16 +42,15 @@
 </template>
 
 <script setup lang="ts">
-import { Member } from "@/types/member";
-import { authApi } from "@/api/modules/auth";
+import {Member} from "@/types/member";
 
 const loginForm = ref<Member>(new Member());
 
+const auth = $store().auth;
 const login = async () => {
   try {
-    const res = await authApi.login(loginForm.value);
-
-    const id = res.data.id;
+    await auth.initAuthToken(loginForm.value);
+    const id =auth.member.id;
     alert("로그인 되었습니다.");
     await $router.push(`/notes/${id}`);
   } catch (e) {

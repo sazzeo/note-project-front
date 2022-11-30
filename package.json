@@ -18,6 +18,7 @@
     "element-plus": "^2.2.19",
     "md-editor-v3": "^2.1.1",
     "pinia": "^2.0.23",
+    "pinia-plugin-persistedstate": "^3.0.1",
     "qs": "^6.11.0",
     "sass": "^1.56.1",
     "sass-loader": "10",

@@ -13,11 +13,10 @@
 </template>
 <script setup lang="ts">
 import locale from "element-plus/lib/locale/lang/ko";
+import utils from "@/hooks/utils";
 
-const isPath = (path: string): boolean => {
-  const fullPath = $router.currentRoute.value.fullPath;
-  return fullPath === path;
-};
+const isPath = utils.isPath;
+
 </script>
 
 <style scoped></style>
