@@ -54,8 +54,7 @@ const login = async () => {
     const id = res.data.id;
     alert("로그인 되었습니다.");
     await $router.push(`/notes/${id}`);
-  }
-  catch (e) {
+  } catch (e) {
     console.log(e);
     alert(e);
   }

@@ -8,7 +8,7 @@
     <el-row justify="center">
       <div class="sign-up">
         <el-form :model="form" label-width="80px">
-          <el-form-item label="아이디" >
+          <el-form-item label="아이디">
             <el-input v-model="form.id" />
           </el-form-item>
           <el-form-item label="비밀번호">
@@ -18,10 +18,7 @@
             <el-input v-model="form.nickname" />
           </el-form-item>
           <el-form-item>
-            <el-button type="primary"
-                       @click="onSubmit"
-            >회원 가입</el-button
-            >
+            <el-button type="primary" @click="onSubmit">회원 가입</el-button>
           </el-form-item>
         </el-form>
       </div>
@@ -30,31 +27,27 @@
 </template>
 
 <script setup lang="ts">
-
-import {Member} from "@/types/member";
-import {authApi} from "@/api/modules/auth";
+import { Member } from "@/types/member";
+import { authApi } from "@/api/modules/auth";
 
 const form = ref<Member>({
   nickname: "",
-  id:"",
-  password:""
-})
+  id: "",
+  password: "",
+});
 
 const onSubmit = async () => {
   try {
     const res = await authApi.sign(form.value);
     alert("회원가입 되었습니다.");
     await $router.push("/login");
-  }catch (e) {
+  } catch (e) {
     alert("회원가입에 실패했습니다.");
   }
-}
-
-
+};
 </script>
 
 <style scoped>
-
 .logo {
   margin-top: 50px;
   font-size: 30px;
