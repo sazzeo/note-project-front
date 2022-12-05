@@ -13,7 +13,7 @@ export default defineStore("auth", () => {
   const initAuthToken = async (loginMember: Member): Promise<any> => {
     try {
       const res = await authApi.login(loginMember);
-      member.value = loginMember;
+      member.value = res.data;
     } catch (e) {
       return Promise.reject(e);
     }

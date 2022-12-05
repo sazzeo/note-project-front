@@ -5,7 +5,7 @@ import { Member } from "@/types/member";
 const API_PATH_PREFIX = "/auth";
 
 export const authApi = {
-  login: (member: Member): AxiosPromise<any> => {
+  login: (member: Member): AxiosPromise<Member> => {
     return request(`${API_PATH_PREFIX}/login`, {
       method: "post",
       params: member,

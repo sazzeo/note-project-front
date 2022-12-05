@@ -3,7 +3,7 @@
     <el-header class="web-header" style="height: 70px; padding: 0px">
       <header-layout />
     </el-header>
-    <el-container v-if="isPath('/notes/write')">
+    <el-container v-if="isPathStartWith('/notes/write/')">
       <router-view></router-view>
     </el-container>
     <el-container v-else>
@@ -25,7 +25,7 @@
 
 import utils from "@/hooks/utils";
 
-const isPath = utils.isPath;
+const isPathStartWith = utils.isPathStartWith;
 
 </script>
 

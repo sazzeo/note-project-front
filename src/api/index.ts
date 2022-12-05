@@ -1,12 +1,8 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { Options } from "@/types/common/api";
 
-const API_URL_PREFIX = "/api/dmcrm";
-/**
- *
- * @param path
- * @param options
- */
+const API_PATH_PREFIX = "/api";
+
 export const request = async (
   path: string,
   options?: Options
@@ -14,9 +10,10 @@ export const request = async (
   const params = options?.params || {};
   const headers = options?.headers || {};
   const method = options?.method?.toLowerCase() || "get";
+  const auth = $store().auth;
 
   const config: AxiosRequestConfig = {
-    url: `${path}`,
+    url: `${API_PATH_PREFIX}${path}`,
     method,
     withCredentials: true,
     timeout: 30 * 1000,
@@ -25,6 +22,15 @@ export const request = async (
   let defaultHeader = {
     Accept: "application/json",
   };
+
+  const authToken = auth.member.authToken;
+  console.log("authToken", auth.member.authToken);
+  //인증 해더 셋팅하기
+  if (authToken) {
+    defaultHeader = Object.assign(defaultHeader, {
+      Authorization: "Bearer " + authToken,
+    });
+  }
 
   if (method === "get") {
     config.params = params;
@@ -47,6 +53,10 @@ export const request = async (
     console.log(response);
     return Promise.resolve(response);
   } catch (error: any) {
+    console.log(error.response);
+    if (error.response.status == 401) {
+      alert("로그인 하세요");
+    }
     return Promise.reject(error.response.data);
   }
 };

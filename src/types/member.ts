@@ -3,4 +3,5 @@ export class Member {
   id: string = "";
   password: string = "";
   nickname: string = "";
+  authToken: string = "";
 }

@@ -9,6 +9,18 @@ const utils = {
   goPath: (path: string) => {
     $router.push(path);
   },
+  isPathStartWith: (path: string): boolean => {
+    const fullPath = $router.currentRoute.value.fullPath;
+    return fullPath.startsWith(path);
+  },
+  getParam: (id: string): string => {
+    const res = $router.currentRoute.value.params[id];
+    if (typeof res == "object") {
+      alert("여기");
+      return "";
+    }
+    return res;
+  },
 };
 
 export default utils;

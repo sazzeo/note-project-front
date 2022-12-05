@@ -10,7 +10,7 @@ const router: Array<RouteRecordRaw> = [
     },
   },
   {
-    path: "/notes/write",
+    path: "/notes/write/:recodeSeq",
     component: () => import("@/components/note/NoteWritePage.vue"),
     name: "notes-write",
     meta: {
