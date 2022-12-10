@@ -39,7 +39,7 @@ export const request = async (
       "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
     });
   }
-  if (method === "post" || method === "update" || method === "delete") {
+  if (method === "post" || method === "put" || method === "delete") {
     config.data = params;
     defaultHeader = Object.assign(defaultHeader, {
       "Content-Type": "application/json; charset=utf-8",

@@ -12,7 +12,7 @@
             <el-input v-model="form.id" />
           </el-form-item>
           <el-form-item label="비밀번호">
-            <el-input v-model="form.password" />
+            <el-input v-model="form.password" type="password" />
           </el-form-item>
           <el-form-item label="닉네임">
             <el-input v-model="form.nickname" />

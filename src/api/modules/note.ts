@@ -1,26 +1,37 @@
 import { AxiosPromise } from "axios";
 import { request } from "@/api";
-import { Note, Recode } from "@/types/common/note";
+import { Note } from "@/types/common/note";
 
 const API_PATH_PREFIX = "/notes";
 
 export const noteApi = {
+  getAll: (id: string): AxiosPromise<any> => {
+    return request(`${API_PATH_PREFIX}`, {
+      method: "get",
+      params: { id },
+    });
+  },
+  get: (noteSeq: number | string): AxiosPromise<any> => {
+    return request(`${API_PATH_PREFIX}/${noteSeq}`, {
+      method: "get",
+    });
+  },
   addNote: (note: Note): AxiosPromise<any> => {
     return request(`${API_PATH_PREFIX}`, {
       method: "post",
       params: note,
     });
   },
-  getRecode: (id: string): AxiosPromise<any> => {
-    return request(`${API_PATH_PREFIX}/recodes`, {
-      method: "get",
-      params: { id },
+  modify: (note: Note): AxiosPromise<any> => {
+    return request(`${API_PATH_PREFIX}`, {
+      method: "put",
+      params: note,
     });
   },
-  addRecode: (recode: Recode): AxiosPromise<any> => {
-    return request(`${API_PATH_PREFIX}/recodes`, {
-      method: "post",
-      params: recode,
+  remove: (noteSeq: number): AxiosPromise<any> => {
+    return request(`${API_PATH_PREFIX}`, {
+      method: "delete",
+      params: noteSeq,
     });
   },
 };

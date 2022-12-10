@@ -21,6 +21,9 @@ const utils = {
     }
     return res;
   },
+  goBack: () => {
+    $router.go(-1);
+  },
 };
 
 export default utils;

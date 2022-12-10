@@ -1,7 +1,3 @@
-export class Recode {
-  recodeName: string = "";
-}
-
 export class Note {
   noteSeq: number = 0;
   recodeSeq: number = 0;

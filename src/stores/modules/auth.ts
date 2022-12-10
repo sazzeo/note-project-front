@@ -4,7 +4,7 @@ import { Member } from "@/types/member";
 import { authApi } from "@/api/modules/auth";
 
 export default defineStore("auth", () => {
-  const member = ref<Member>(new Member());
+  const member = ref<Member | any>(new Member());
 
   const isLogged = computed<boolean>(() => {
     return Boolean(member.value.id && true);
@@ -19,7 +19,7 @@ export default defineStore("auth", () => {
     }
   };
 
-  const deleteAuthToken = () => {
+  const deleteMember = () => {
     member.value = new Member();
   };
 
@@ -27,6 +27,6 @@ export default defineStore("auth", () => {
     isLogged,
     member,
     initAuthToken,
-    deleteAuthToken,
+    deleteMember,
   };
 });

@@ -20,6 +20,7 @@
         <el-col :span="18">
           <el-input
             v-model="loginForm.password"
+            type="password"
             placeholder="비밀번호를 입력하세요"
             size="large"
           ></el-input>

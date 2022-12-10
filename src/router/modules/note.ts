@@ -17,6 +17,22 @@ const router: Array<RouteRecordRaw> = [
       title: "노트 write 페이지",
     },
   },
+  {
+    path: "/notes/read/:noteSeq",
+    component: () => import("@/components/note/NoteReadPage.vue"),
+    name: "notes-read",
+    meta: {
+      title: "노트 read 페이지",
+    },
+  },
+  {
+    path: "/notes/modify/:noteSeq",
+    component: () => import("@/components/note/NoteWritePage.vue"),
+    name: "notes-modify",
+    meta: {
+      title: "노트 modify 페이지",
+    },
+  },
 ];
 
 export default router;
